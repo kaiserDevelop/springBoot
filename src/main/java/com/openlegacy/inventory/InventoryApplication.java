@@ -8,6 +8,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import org.springframework.boot.CommandLineRunner;
 
+/**
+ * Configuration for invetory app
+ * @author César Villalba Visuet
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 @EnableSwagger2
 @SpringBootApplication
 public class InventoryApplication implements CommandLineRunner{
@@ -19,6 +26,10 @@ public class InventoryApplication implements CommandLineRunner{
 		SpringApplication.run(InventoryApplication.class, args);
 	}
 
+	/**
+	 * Load data in H2 data base at start the app
+	 * @param args
+	 */
 	@Override
 	public void run(String... args) {
 		inventoryRepository.save(new Inventory("Jabon",10,"4567889"));

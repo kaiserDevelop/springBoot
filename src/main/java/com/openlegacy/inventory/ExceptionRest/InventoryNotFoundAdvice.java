@@ -6,6 +6,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+/**
+ * Send a 404 back to client
+ * @author César Villalba Visuet
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 @ControllerAdvice
 public class InventoryNotFoundAdvice {
     @ResponseBody

@@ -6,6 +6,13 @@ import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.ResourceAssembler;
 import org.springframework.stereotype.Component;
 
+/**
+ * Implements hateoas resource for endpoints.
+ * @author César Villalba Visuet
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 @Component
 public class InventoryResourceAssembler implements ResourceAssembler<Inventory, Resource<Inventory>> {
 

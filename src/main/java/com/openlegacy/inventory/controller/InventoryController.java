@@ -16,7 +16,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
+/**
+ * Rest Controller contains endpoints for api rest inventory.
+ * @author César Villalba Visuet
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 @RestController
 @RequestMapping(value = "/api/inventory", produces = "application/json")
 public class InventoryController {
@@ -29,7 +35,7 @@ public class InventoryController {
     /**
      * Get all items from inventory
      *
-     * @return
+     * @return list of inventory
      */
     @GetMapping("/records")
     public Resources<Resource<Inventory>> getAllInventory() {
@@ -44,8 +50,8 @@ public class InventoryController {
     /**
      * Get one item from inventory
      *
-     * @param id
-     * @return
+     * @param  id inventary
+     * @return one inventary json object
      */
     @GetMapping("/records/{id}")
     public Resource<Inventory> readInventoryDetails(@PathVariable Long id) {
@@ -56,8 +62,8 @@ public class InventoryController {
     /**
      * Delete one item from inventory
      *
-     * @param id
-     * @return
+     * @param id inventary
+     * @return message confirm the acction
      */
     @DeleteMapping("/records/{id}")
     public ResponseEntity<?> deleteItem(@PathVariable Long id) {
@@ -72,8 +78,8 @@ public class InventoryController {
     /**
      * Add a new item in inventory
      *
-     * @param inventory
-     * @return
+     * @param inventory json
+     * @return the inventary json with the id generated
      */
     @PostMapping("/records")
     public ResponseEntity<Resource<Inventory>> saveInventory(@RequestBody Inventory inventory) {
@@ -86,9 +92,9 @@ public class InventoryController {
     /**
      * Update the amount for a inventory
      *
-     * @param id
-     * @param inventory
-     * @return
+     * @param id inventary
+     * @param inventory json
+     * @return the inventary json with the id updated
      */
     @PutMapping("/records/{id}")
     public ResponseEntity<ResourceSupport> updateInventoryQuantity(@PathVariable Long id, @RequestBody Inventory inventory) {
