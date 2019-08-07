@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/api/inventory", produces = "application/json")
 public class InventoryController {
 
-    
+
     @Autowired
     private InventoryRepository  inventoryRepository;
     @Autowired
